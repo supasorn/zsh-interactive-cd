@@ -135,6 +135,7 @@ zic-completion() {
     _zic_complete ${tokens[2,${#tokens}]/#\~/$HOME}
     ntokens=(${(z)LBUFFER})
 
+    echo
     while [ "${tokens}" != "${ntokens}" ]; do
       echo "${ntokens}"
       tokens=(${(z)LBUFFER})
