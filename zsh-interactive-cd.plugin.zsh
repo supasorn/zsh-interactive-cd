@@ -133,14 +133,14 @@ zic-completion() {
     zle ${__zic_default_completion:-expand-or-complete}
   elif [ "$cmd" = cd ]; then
     _zic_complete ${tokens[2,${#tokens}]/#\~/$HOME}
-    ntokens=(${(z)LBUFFER})
+    #ntokens=(${(z)LBUFFER})
 
-    while [ "${tokens}" != "${ntokens}" ]; do
-      echo "${ntokens}"
-      tokens=(${(z)LBUFFER})
-      _zic_complete ${tokens[2,${#tokens}]/#\~/$HOME}
-      ntokens=(${(z)LBUFFER})
-    done
+    #while [ "${tokens}" != "${ntokens}" ]; do
+      #echo "${ntokens}"
+      #tokens=(${(z)LBUFFER})
+      #_zic_complete ${tokens[2,${#tokens}]/#\~/$HOME}
+      #ntokens=(${(z)LBUFFER})
+    #done
   else
     zle ${__zic_default_completion:-expand-or-complete}
   fi
