@@ -135,12 +135,22 @@ zic-completion() {
     _zic_complete ${tokens[2,${#tokens}]/#\~/$HOME}
     #ntokens=(${(z)LBUFFER})
 
+<<<<<<< HEAD
     #while [ "${tokens}" != "${ntokens}" ]; do
       #echo "${ntokens}"
       #tokens=(${(z)LBUFFER})
       #_zic_complete ${tokens[2,${#tokens}]/#\~/$HOME}
       #ntokens=(${(z)LBUFFER})
     #done
+=======
+    echo
+    while [ "${tokens}" != "${ntokens}" ]; do
+      echo "${ntokens}"
+      tokens=(${(z)LBUFFER})
+      _zic_complete ${tokens[2,${#tokens}]/#\~/$HOME}
+      ntokens=(${(z)LBUFFER})
+    done
+>>>>>>> 16eb3ce59e75498c015f6f7fc8f17af0b59f1da9
   else
     zle ${__zic_default_completion:-expand-or-complete}
   fi
